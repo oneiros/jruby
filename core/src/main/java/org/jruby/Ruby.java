@@ -151,6 +151,9 @@ import org.jruby.util.ClassDefiningJRubyClassLoader;
 import org.jruby.util.KCode;
 import org.jruby.util.SafePropertyAccessor;
 import org.jruby.util.cli.Options;
+import org.jruby.util.collections.ClassValue;
+import org.jruby.util.collections.ClassValueCalculator;
+import org.jruby.util.collections.MapBasedClassValue;
 import org.jruby.util.collections.WeakHashSet;
 import org.jruby.util.func.Function1;
 import org.jruby.util.io.FilenoUtil;
@@ -5112,12 +5115,12 @@ public final class Ruby implements Constantizable {
      */
     private MethodHandle nullToNil;
 
-    public final ClassValue<TypePopulator> POPULATORS = new ClassValue<TypePopulator>() {
+    public final org.jruby.util.collections.ClassValue<TypePopulator> POPULATORS = new MapBasedClassValue<TypePopulator>(new ClassValueCalculator<TypePopulator>() {
         @Override
-        protected TypePopulator computeValue(Class<?> type) {
+        public TypePopulator computeValue(Class<?> type) {
             return RubyModule.loadPopulatorFor(type);
         }
-    };
+    });
 
     public final JavaSites sites = new JavaSites();
 
