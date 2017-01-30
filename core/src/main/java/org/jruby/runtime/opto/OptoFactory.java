@@ -57,7 +57,11 @@ public class OptoFactory {
     }
 
     public static Invalidator newGlobalInvalidator(int maxFailures) {
-        return new FailoverSwitchPointInvalidator(maxFailures);
+        if (indyEnabled()) {
+            return new FailoverSwitchPointInvalidator(maxFailures);
+        } else{
+            return new ObjectIdentityInvalidator();
+        }
     }
 
     public static Invalidator newMethodInvalidator(RubyModule module) {
