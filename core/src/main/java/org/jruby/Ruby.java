@@ -251,7 +251,13 @@ public final class Ruby implements Constantizable {
 
         this.staticScopeFactory = new StaticScopeFactory(this);
         this.beanManager        = BeanManagerFactory.create(this, config.isManagementEnabled());
-        this.jitCompiler        = new JITCompiler(this);
+
+        if (config.getCompileMode().shouldJIT()) {
+            this.jitCompiler = new JITCompiler(this);
+        } else {
+            this.jitCompiler = null;
+        }
+
         this.parserStats        = new ParserStats(this);
 
         Random myRandom;
