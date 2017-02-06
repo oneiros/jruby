@@ -29,7 +29,7 @@
 package org.jruby.parser;
 
 import java.io.Serializable;
-import java.lang.invoke.MethodHandle;
+import org.jruby.util.invoke.MethodHandle;
 import java.util.Arrays;
 
 import org.jruby.RubyModule;

@@ -13,9 +13,9 @@ import org.jruby.util.collections.NonBlockingHashMapLong;
 import org.objectweb.asm.Label;
 import org.objectweb.asm.tree.LabelNode;
 
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodHandles;
-import java.lang.invoke.MethodType;
+import org.jruby.util.invoke.MethodHandle;
+import org.jruby.util.invoke.MethodHandles;
+import org.jruby.util.invoke.MethodType;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
