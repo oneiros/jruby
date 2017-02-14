@@ -40,6 +40,12 @@ project 'JRuby', 'https://github.com/jruby/jruby' do
     releases 'false'
     snapshots 'true'
   end
+  repository( :url => 'http://jcenter.bintray.com',
+              :id => 'central',
+              :name => 'bintray' ) do
+    releases 'true'
+    snapshots 'false'
+  end
 
   source_control( :url => 'https://github.com/jruby/jruby',
                   :connection => 'scm:git:git@jruby.org:jruby.git',

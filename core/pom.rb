@@ -77,6 +77,7 @@ project 'JRuby Core' do
   jar 'org.slf4j:slf4j-simple:1.7.12', :scope => 'test'
 
   jar 'me.qmx.jitescript:jitescript:0.4.1', :exclusions => ['org.ow2.asm:asm-all']
+  jar 'com.linkedin.dexmaker:dexmaker:2.2.0', type: 'pom'
 
   plugin_management do
     plugin( 'org.eclipse.m2e:lifecycle-mapping:1.0.0',

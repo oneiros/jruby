@@ -273,6 +273,11 @@ DO NOT MODIFIY - GENERATED CODE
         </exclusion>
       </exclusions>
     </dependency>
+    <dependency>
+      <groupId>com.linkedin.dexmaker</groupId>
+      <artifactId>dexmaker</artifactId>
+      <version>2.2.0</version>
+    </dependency>
   </dependencies>
   <build>
     <defaultGoal>package</defaultGoal>
